@@ -1,11 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import MyBtn from '@/components/myBtn'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import { useRouter } from 'next/router'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const router = useRouter()
+  const handleMove = () => {
+    router.push('/sales')
+  }
+
   return (
     <>
       <Head>
@@ -116,6 +123,9 @@ export default function Home() {
               with&nbsp;Vercel.
             </p>
           </a>
+        </div>
+        <div>
+          <MyBtn onClick={handleMove}>Sales Page</MyBtn>
         </div>
       </main>
     </>
